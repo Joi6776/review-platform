@@ -27,6 +27,9 @@ spring:
           max-idle: 8
           min-idle: 1
 
+review:
+  claim-ttl-seconds: 300
+
 mybatis-plus:
   configuration:
     # 数据库 snake_case 自动映射到 Java camelCase
