@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: review-platform
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 注意：serverTimezone 必须显式指定，否则时间会差 8 小时
+    url: jdbc:mysql://localhost:3306/review_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root1234
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 3000
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 3s
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 1
+
+mybatis-plus:
+  configuration:
+    # 数据库 snake_case 自动映射到 Java camelCase
+    map-underscore-to-camel-case: true
+    # 开发期把 SQL 打出来，方便核对；上线要关掉
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 主键用数据库自增
+      id-type: auto
+    banner: false
+
+logging:
+  level:
+    com.example.review: debug
+    root: info

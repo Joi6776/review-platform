@@ -1,0 +1,32 @@
+# ---- Java / Maven ----
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+
+# ---- IDE ----
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.vscode/
+
+# ---- 日志与临时文件 ----
+*.log
+logs/
+*.tmp
+
+# ---- 系统 ----
+.DS_Store
+Thumbs.db
+
+# ---- 本地敏感配置（如果有）----
+application-local.yml
+application-dev-local.yml
+
+# ---- 数据与构建产物 ----
+*.hprof
+*.tar
+*.zip
